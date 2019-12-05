@@ -11,3 +11,7 @@ package binarytree
 type BinaryTree struct {
 	root *TreeNode
 }
+
+func NewBinaryTree(v interface{}) *BinaryTree {
+	return &BinaryTree{NewTreeNode(v)}
+}
