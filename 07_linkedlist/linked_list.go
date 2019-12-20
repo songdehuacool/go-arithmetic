@@ -231,3 +231,17 @@ func InversionLinkedListPlalindrome(head *ListNode, node *ListNode) *ListNode {
 	node.Next = pre
 	return node
 }
+
+func CheckCircle(node *ListNode) bool {
+
+	fast := node
+	slow := node
+	for slow.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+		if slow.Value == fast.Value {
+			return true
+		}
+	}
+	return false
+}

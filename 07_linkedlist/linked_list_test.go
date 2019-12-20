@@ -42,3 +42,16 @@ func TestLinkedList_InversionLinkedList(t *testing.T) {
 
 	fmt.Println("------------------", Plalindrome(list.Head))
 }
+
+func TestCheckCircle(t *testing.T) {
+	// 0-->1-->2-->3-->0
+	list := NewLinkedList(0)
+	list.InsertToTail(1)
+	list.InsertToTail(2)
+	list.InsertToTail(3)
+	list.Head.Next.Next.Next.Next = list.Head
+	//list.InsertToTail(1)
+	//list.InsertToTail(0)
+	fmt.Println("circle ------------- ", CheckCircle(list.Head.Next.Next.Next))
+
+}
